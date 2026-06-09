@@ -1,4 +1,4 @@
-# Volla Phone Plinius (ansuz) - Kernel Manifest
+# Volla Phone Plinius & Plinius Plus (ansuz) - Kernel Manifest
 
 ## About
 
