@@ -1,12 +1,12 @@
-# Volla Phone Plinius & Plinius Plus (ansuz) - Kernel Manifest
+# Volla Phone Quintus (algiz) - Kernel Manifest
 
 ## About
 
-This repository contains the kernel manifest for **Volla Phone Plinius & Plinius Plus (codename: ansuz)**, enabling developers to build and customize the Android kernel for this device.
+This repository contains the kernel manifest for **Volla Phone Quintus (codename: algiz)**, enabling developers to build and customize the Android kernel for this device.
 
 ## Required Repositories
 
-The following repositories are required for building the Volla Phone Plinius kernel, as defined in `ansuz.xml`:
+The following repositories are required for building the Volla Phone Quintus kernel, as defined in `algiz.xml`:
 
 ### Kernel Build System
 - **[android_kernel_build_kernel](https://github.com/HelloVolla/android_kernel_build_kernel)** - Kernel build and scripts
@@ -16,13 +16,13 @@ The following repositories are required for building the Volla Phone Plinius ker
   - Path: `build/bazel_mgk_rules`
 
 ### Kernel Sources
-- **[android_kernel_volla_mt6878](https://github.com/HelloVolla/android_kernel_volla_mt6878)** - Main kernel source (Linux 6.1)
-  - Path: `kernel-6.1`
+- **[android_kernel_volla_mt6877](https://github.com/HelloVolla/android_kernel_volla_mt6877)** - Main kernel source (Linux 6.6)
+  - Path: `kernel-6.6`
 
-- **[android_kernel_device_modules_volla_mt6878](https://github.com/HelloVolla/android_kernel_device_modules_volla_mt6878)** - Device-specific kernel modules
-  - Path: `kernel_device_modules-6.1`
+- **[android_kernel_device_modules_volla_mt6877](https://github.com/HelloVolla/android_kernel_device_modules_volla_mt6877)** - Device-specific kernel modules
+  - Path: `kernel_device_modules-6.6`
 
-- **[android_kernel_modules_volla_mt6878](https://github.com/HelloVolla/android_kernel_modules_volla_mt6878)** - MediaTek vendor kernel modules
+- **[android_kernel_modules_volla_mt6877](https://github.com/HelloVolla/android_kernel_modules_volla_mt6877)** - MediaTek vendor kernel modules
   - Path: `vendor/mediatek/kernel_modules`
 
 ## Getting Started
@@ -38,12 +38,12 @@ You'll need to be familiar with [Android Source Control Tools](https://source.an
 
 1. Initialize your local repository using the Google kernel manifest:
 ```bash
-repo init -u https://android.googlesource.com/kernel/manifest.git -b common-android14-6.1
+repo init -u https://android.googlesource.com/kernel/manifest.git -b common-android15-6.6
 ```
 
 2. Clone this local manifest repository:
 ```bash
-git clone git@github.com:HelloVolla/android_kernel_manifest.git -b volla-15.0-ansuz .repo/local_manifests
+git clone git@github.com:HelloVolla/android_kernel_manifest.git -b volla-16.0-algiz .repo/local_manifests
 ```
 
 3. Sync all repositories:
@@ -53,11 +53,11 @@ repo sync
 
 ### Building the Kernel
 
-The Volla Phone Plinius kernel uses **Kleaf** (Kernel Build System with Bazel) for building.
+The Volla Phone Quintus kernel uses **Kleaf** (Kernel Build System with Bazel) for building.
 
 To build the GKI kernel image and device-specific kernel modules:
 ```bash
-kernel_device_modules-6.1/build.sh
+kernel_device_modules-6.6/build.sh
 ```
 
 Build artifacts will be available in:
@@ -72,8 +72,8 @@ out/
 ├── build/
 │   ├── kernel/              # Kernel build scripts and infrastructure
 │   └── bazel_mgk_rules/     # Bazel build rules
-├── kernel-6.1/              # Main kernel source tree
-├── kernel_device_modules-6.1/ # Device-specific modules and build script
+├── kernel-6.6/              # Main kernel source tree
+├── kernel_device_modules-6.6/ # Device-specific modules and build script
 ├── vendor/
 │   └── mediatek/
 │       └── kernel_modules/  # MediaTek vendor modules

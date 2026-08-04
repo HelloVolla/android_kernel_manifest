@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/HelloVolla" name="github"/>
+
+  <!-- Remove Google projects -->
+  <remove-project name="kernel/build" />
+  <remove-project name="kernel/common" />
+
+  <!-- Track Volla Quintus kernel projects -->
+  <project path="build/kernel" name="android_kernel_build_kernel" remote="github" revision="volla-16.0-algiz" >
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
+    <linkfile src="build_test.sh" dest="build/build_test.sh" />
+    <linkfile src="config.sh" dest="build/config.sh" />
+  </project>
+  <project path="build/bazel_mgk_rules" name="android_kernel_build_bazel_mgk_rules" remote="github" revision="volla-16.0-algiz" >
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
+  </project>
+
+  <project path="kernel-6.6"  name="android_kernel_volla_mt6877" remote="github" revision="volla-16.0" />
+  <project path="kernel_device_modules-6.6" name="android_kernel_device_modules_volla_mt6877" remote="github" revision="volla-16.0"  >
+    <linkfile src="build.config.mtk_kernel_device_modules" dest="build.config" />
+  </project>
+  <project path="vendor/mediatek/kernel_modules" name="android_kernel_modules_volla_mt6877" remote="github" revision="volla-16.0" />
+</manifest>
